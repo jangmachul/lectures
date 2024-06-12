@@ -13,12 +13,16 @@
 
 ### number type
 number 타입은 자바스크립트에서 숫자를 의미하는 모든값을 포함하는 타입 입니다.
+넘버 타입을 사용 할 때 값들이 number 인지 확인하는 방법은 typeof 를 console.log 안에 넣어주시면 됩니다.
 ```js
-number("123"); // 123
-number("123") === 123; // 참
+const age = 27;
+const money = 10000;
 
-number("meat"); // NaN
-number(undefined) // NaN
+console.log(age) // 27
+console.log(money) // 10000
+console.log(typeof age) // number
+console.log(typeof money) // number
+
 ```
 ### string type
 string 타입은 문자열을 의미 하는 타입 입니다.
@@ -32,11 +36,15 @@ console.log(study) // 공부
 ### boolean type
 boolean 타입은 참과 거짓을 저장하는 타입 입니다.
 ```js
-1 < 2 // true
-1 > 2 // false
-12 === 12 // true
-11 === 12 // false
-12 !== 12 // false
+let a = 5;
+
+let b = 10;
+
+if (b > a){
+    console.log('b는 a보다 크다')
+} else {
+    console.log('a는 보다 작다')
+} // b는 a보다 크다 가 출력 됩니다.
 ```
 
 ### null type , undefined type
@@ -45,18 +53,19 @@ null 타입과 undefined 타입은 각각 null 과 undefined만 할당 가능한
 const popcorn = null
 console.log(popcorn) // null
 
-const tomato
+let tomato // 어떤 값도 할당되지않음, 자료형을 알수 없어서 undefined
 consloe.log(tomato) // umdefined
 ```
 
 ### symbol type
 symbol 타입은 symbol 함수를 호춤함으로써 생성 가능하며 변경이 불가능한 윈시 값 입니다.
+symbol 타입은 생성될 때마다 매번 새로운 심볼이 생성 되므로 new 연산자를 사용했을 시 false 값이 나옵니다.
 ```js
-const buzz = symbol()
-const buss = symbol(1)
+const buzz = Symbol(2);
+const buzz2 = Symbol(3);
 
 console.log(buzz === buzz) // true
-console.log(buzz === buss) // false
+console.log(buzz === buzz2) // false
 ```
 ### bigint type
 자바 스크립트에서 다룰 수 있는 임계치를 넘은 숫자를 다룰 때 사용하는 타입 입니다.
@@ -64,11 +73,11 @@ console.log(buzz === buss) // false
 ```js
 const bignum = 998798998797998879877897987788665465465n;
 
-const huge = bigint(998798998797998879877897987788665465465); // 998798998797998879877897987788665465465n
+const huge = BigInt(998798998797998879877897987788665465465); // 998798998797998879877897987788665465465n
 
-const wtb = bigint("998798998797998879877897987788665465465"); // 998798998797998879877897987788665465465n
+const wtb = BigInt("998798998797998879877897987788665465465"); // 998798998797998879877897987788665465465n
 
-const dul = bigint("0x1ffffffffffff"); // 998798998797998879877897987788665465465n
+const dul = BigInt("0x1ffffffffffff"); // 998798998797998879877897987788665465465n
 ```
 
 ## 원시 타입의 작동 원리
