@@ -13,7 +13,7 @@ javascript 에서는 데이터 타입을두개로 나눈다. 하나는 원시(pr
 
 하지만 여기서,
 
-자바스크립트의 "string 타입" 은 메서드를 가지는데? 그러면 원시타입이 될수 없지 않은가?
+> 자바스크립트의 "string 타입" 은 메서드를  가지는데? 그러면 원시타입이 될수 없지 않은가?
 
 라는 생각이 들수있다
 
@@ -21,19 +21,36 @@ javascript 에서는 데이터 타입을두개로 나눈다. 하나는 원시(pr
 
 ```js
 "tmp".concat();
-
-// string 오브젝트로 생성하기에 메서드를 가질 수 있다.
-
+```
+`string` 오브젝트로 생성하기에 메서드를 가질수 있다.
+```js
 const str = new String('tmp');
 ```
 
+## 원시타입은 어떻게 작동하는가?
+
+자바스크립트에서 원시타입을 `선언(declare)`하면, 이는 `스택(stack)`에 저장된다.스택이란 `LIFO(Last IN First Out)` 구조를 가진 `자료구조(data structure)`이다. 저장된 원시타입은 `식별자`를 통해 접근할 수 있고, 원시 데이터와 함께 스택에 저장된다.
+
+```js
+const numOne = 50;
+const numTwo = 50;
+```
+위와 같이 같은 값을 가진 두개의 변수가 선언 및 할당되었을 때, numOne이 값과 함께 스택에 푸쉬되고, 그 위에 numTwo가 값과 함께 스택에 푸쉬된다. 같은 값이 있건 말건 전혀 상관없는 두개의 공간이 생성된다.
 
 
+<img src="./816339ff.png">
 
+이때 `numOne`의 값을 변경한다해도 `numTwo`에는 전혀 지장이 없다.
 
+```js
+let numOne = 50;
+let numTwo = numOne;
+numOne = 100;
+console.log(numOne); // 100
+console.log(numTwo); // 50
+```
 
-
-
+<img src="./370b640b.png">
 
 
 
