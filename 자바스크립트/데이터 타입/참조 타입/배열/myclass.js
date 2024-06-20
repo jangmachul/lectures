@@ -2,5 +2,4 @@ const myclass = ["장혁민",'강태욱','기현','박준후','이경재','이�
 
 for (let i = 0; i < myclass.length; i++) {
     console.log(myclass[i]);
-    
 }
