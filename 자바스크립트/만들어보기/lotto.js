@@ -34,40 +34,40 @@
 
 // class 로 만든 로또 1
 
-class Circle {
-    num = [];
-    constructor(_num) {
-        this.num = [];
-    }
+// class Circle {
+//     num = [];
+//     constructor(_num) {
+//         this.num = [];
+//     }
 
-    init() {
-        for(let i = 1; i < 46; i++) {
-            this.num.push(i);
-        }
-        return this.num
-    }
-}
-const num = new Circle();
+//     init() {
+//         for(let i = 1; i < 46; i++) {
+//             this.num.push(i);
+//         }
+//         return this.num
+//     }
+// }
+// const num = new Circle();
 
 
-class GameManager {
-    lotto = [];
-    constructor () {
-        this.lotto = [];
-    }
-    injection() {
-        const Num = num.init()
-        for (let i = 0; i < 6; i++) {     
-            const re = parseInt(Math.random()*Num.length)
-            this.lotto.push(Num[re]);
-            Num.splice(re, 1)
-        }
-        console.log(this.lotto);
-    }
+// class GameManager {
+//     lotto = [];
+//     constructor () {
+//         this.lotto = [];
+//     }
+//     injection() {
+//         const Num = num.init()
+//         for (let i = 0; i < 6; i++) {     
+//             const re = parseInt(Math.random()*Num.length)
+//             this.lotto.push(Num[re]);
+//             Num.splice(re, 1)
+//         }
+//         console.log(this.lotto);
+//     }
     
-}
-const gamemanager = new GameManager();
-gamemanager.injection()
+// }
+// const gamemanager = new GameManager();
+// gamemanager.injection()
 
 // class 로 만든 로또 2
 
@@ -113,31 +113,49 @@ gamemanager.injection()
 
 
 
-class Ball {
+// class Ball {
+//     num = 0;
+//     constructor() {
+//         this.num = Math.floor(Math.random() * 45 + 1);
+//     }
+// }
+
+// class BallManager {
+//     ballarr = [];
+    
+//     mango() {
+//         console.log(1)
+//         this.ballarr = [];
+//         for (let i = 0; i < 6; i++) {
+//             const ball = new Ball()
+//             for (let b = 0; b < this.ballarr.length; b++) {
+//                 if(ball.num === this.ballarr[b].num) {
+//                     return this.mango()
+//                 }
+//             }
+//             this.ballarr.push(ball)
+//         }
+//         console.log(this.ballarr)
+//     }
+// }
+
+// const ballmanager = new BallManager()
+// ballmanager.mango()
+
+
+
+class ball {
     num = 0;
     constructor() {
-        this.num = Math.floor(Math.random() * 45 + 1);
+        this.num = parseInt(Math.random() * 45 + 1 )
     }
 }
 
-class BallManager {
-    ballarr = [];
+class LottoManager {
+    lotto = [];
+
+    apple() {
+        this.lotto = [];
     
-    mango() {
-        console.log(1)
-        this.ballarr = [];
-        for (let i = 0; i < 6; i++) {
-            const ball = new Ball()
-            for (let b = 0; b < this.ballarr.length; b++) {
-                if(ball.num === this.ballarr[b].num) {
-                    return this.mango()
-                }
-            }
-            this.ballarr.push(ball)
-        }
-        console.log(this.ballarr)
     }
 }
-
-const ballmanager = new BallManager()
-ballmanager.mango()
