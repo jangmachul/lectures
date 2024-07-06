@@ -50,6 +50,7 @@
 
 
 
+// ,정답
 
 class Content {
     constructor(_list) {
@@ -60,7 +61,6 @@ class Content {
 const btt = document.querySelector("#btn")
 
 
-// ,정답
 
 class ListManager {
     constructor() {
