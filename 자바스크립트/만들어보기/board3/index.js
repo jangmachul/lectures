@@ -38,8 +38,7 @@ class BoardManager {
             btn1.innerHTML = "수정"
             btn2.innerHTML = "삭제"
             span3.append(btn1, btn2);
-            console.log(this.arr)
-            Span.innerHTML = "" + this.arr[i].name 
+            Span.innerHTML = "" + this.arr[i].name
             Span2.innerHTML = "" + this.arr[i].content
             Body.append(Li)
             Li.append(Span, Span2, span3)
