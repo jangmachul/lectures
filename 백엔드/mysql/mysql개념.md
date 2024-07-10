@@ -2,9 +2,6 @@
 - MySQL이란?
 - MySQL구문
 
-
-
-
 > 개발자들이 백엔드를 배울 때 처음 DBMS를 다루게 되는데 이때 MySQL을 선택 하게 됩니다. 이유가 무엇 일까요?
 
 ## MySQL이란?
@@ -87,8 +84,12 @@ DELETE FROM ttable WHERE age = 34;
 ```
 이러면 이제 age 가 34 인 데이터가 다 지워지게 됩니다.
 
+### Auto increment 초기화
+```sh
+SET @count = 0;
 
+UPDATE solar_system SET id = @COUNT := @COUNT+1;
+```
+만약 정보를 잘못 추가하여 테이블안에 있는 값을 지울 경우 Auto increment 때문에 만약 2 를 지웠다면 1 , 3 , 4 이런식으로 되게 됩니다. 이걸 재 정렬 시켜서 1 , 2 , 3 을 만드실 때 유용하게 사용 가능한 코드 입니다. 
 
-
-
-
+보통 DELETE 를 쓸 때 같이 쓰신다고 생각하면 편합니다.
