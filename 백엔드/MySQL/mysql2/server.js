@@ -62,12 +62,7 @@ const Mysql = MySQL.createPool({
 
 const data = Mysql.query("CREATE TABLE milk(taste VARCHAR(20), color VARCHAR(20) flavor VARCHAR(20))")
 
-Mysql.query("INSERT INTO milk(taste, color, flavor)VALUES(?, ?, ?)", ["sweet", "black","chocolate"])
-
-
-
-
-
+Mysql.query("INSERT INTO milk(taste, color, flavor)VALUES(?, ?, ?)", ["sweet","black","chocolate"])
 
 
 app.listen(3000 , () => {
